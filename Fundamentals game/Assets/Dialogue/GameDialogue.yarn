@@ -159,7 +159,7 @@ title: Door5
 
 title: Room4
 ---
-    <<play_animation "ClosingDoor" "DoorClose" "false">>
+    <<play_animation "ClosingDoor" "ClosingDoorClose" "false">>
     <<play_animation "LoweringRoof" "LoweringRoof" "false">>
     *click*
     Partner in Crime: WHAT DID YOU DO??!?!
