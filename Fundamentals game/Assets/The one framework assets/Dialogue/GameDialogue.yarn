@@ -1,0 +1,41 @@
+﻿title: Lobby
+---
+Partner in Crime: Test, test… does the walkie talkie work?
+You: It sure does
+Partner in Crime: Good
+Partner in Crime: First you will have to find the entrance to the vault
+Partner in Crime: That shouldn’t be that difficult
+Partner in Crime: Just make sure to not be seen
+You: That won’t be a problem considering there is basically no one here
+You: …
+You: Strange
+===
+
+title: Room1
+---
+
+    You: Found the entrance
+    Partner in Crime: Good… good
+    Partner in Crime: Now be careful where you walk, there are traps everywhere
+    Partner in Crime: There should be a way to know the right path
+    Partner in Crime: Make sure to look around for clues
+===
+
+title: Room2
+---
+<<if not has_item("Player", "keyOne")>>
+    You: This door is blocking the path to the exit
+    Partner in Crime: Hmmm…
+    Partner in Crime: There must be a way to open that door
+<<else>>
+    <<play_animation "Door1" "DoorOpen" "false">>
+    You: I’m in the next room… but is just empty…
+    Partner in Crime: According to the map there is nothing wrong here
+    Partner in Crime: You can probably just go for it
+<<endif>>
+===
+
+title: InsideRoom2
+---
+blabla
+===

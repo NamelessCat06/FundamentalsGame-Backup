@@ -1,0 +1,264 @@
+//________________
+//    Outside
+//________________
+
+title: Start
+---
+<<declare $objective = "started">>
+<<set $objective = "Talk to your partner in crime">>
+===
+
+title: Outside
+---
+<<set $objective to "">>
+    Partner in Crime: Okay so you know what we’re here for
+    You: Wha~?
+    Partner in Crime: *Sigh*
+    Partner in Crime: We are here to rob the vault
+    Partner in Crime: You’ll go in while I guide you through it, remember?
+    You: Yes yes…
+    You: But why do I have to go in alone? Can’t we just both go, like normally?
+    Partner in Crime: Well, this vault is trickier than the past ones, so one of us will have to guide the other one through it, got it?
+    Partner in Crime: Besides, I’m the one that got us the map of the vault, so it’s only fair for you to go in.
+    You: Sure….
+    You: How did you even get that map? You never told me
+    Partner in Crime: That’s not important
+    Partner in Crime: Hurry up, before the guards grow suspicious of us
+<<set $objective to "Enter the bank">>
+===
+
+//________________
+//     Inside
+//________________
+
+title: Lobby
+---
+<<set $objective to " ">>
+    Partner in Crime: Test, test… does the walkie talkie work?
+    You: It sure does
+    Partner in Crime: Good
+    Partner in Crime: First you will have to find the entrance to the vault
+    Partner in Crime: That shouldn’t be that difficult
+    Partner in Crime: Just make sure to not be seen
+    You: That won’t be a problem considering there is basically no one here
+    You: …
+    You: Strange
+<<set $objective to "FIND THE EMPLOYEES ENTRANCE">>
+===
+
+//________________
+//     Room 1
+//________________
+
+title: Room1
+---
+<<set $objective to "GET TO THE VAULT ROOM">>
+    You: Found the entrance
+    Partner in Crime: Good… good
+    Partner in Crime: Now be careful where you walk, there are traps everywhere
+    Partner in Crime: There should be a way to know the right path
+    Partner in Crime: Make sure to look around for clues
+===
+
+//________________
+//     Room 2
+//________________
+
+title: EnterRoom2
+---
+<<if not has_item("Player", "key1")>>
+    You: This door is blocking the path to the exit
+    Partner in Crime: Hmmm…
+    Partner in Crime: There must be a way to open that door
+<<else>>
+    <<play_animation "Door1 (Red)" "DoorOpen" "false">>
+    //<<take_item "Player" "key1">>
+    You: I’m in the next room… but is just empty…
+    Partner in Crime: According to the map there is nothing wrong here
+    Partner in Crime: You can probably just go for it
+<<endif>>
+===
+
+title: Room2
+---
+<<if not has_item("Player", "key2")>>
+    You: The door is locked
+    Partner in Crime: You didn’t go into the security room to grab the key??
+    You: … no
+    Partner in Crime: …
+<<else>>
+    <<play_animation "Door2 (Green)" "DoorOpen" "false">>
+    //<<take_item "Player" "key2">>
+    Partner in Crime: You did it!
+<<endif>>
+===
+
+title: Key2
+---
+    You: I got a key
+    You: …
+    You: I think I activated lasers
+    Partner in Crime: DON'T TOUCH THEM
+    Partner in Crime: The alarm might go off when you do
+    Partner in Crime: Just get out of there as fast as possible
+===
+
+//________________
+//     Room 3
+//________________
+
+title: Room3
+---
+    Partner in Crime: Okay in this room there should be 3 keys hidden
+    Partner in Crime: You will need them to open all the doors
+    Partner in Crime: ...
+    Partner in Crime: If you can find the doors at least
+===
+
+title: Door3
+---
+<<if not has_item("Player", "key3")>>
+    Partner in Crime: You know you can't open locked doors without unlocking first, right??
+<<else>>
+    <<play_animation "Door3 (Blue)" "DoorOpen" "false">>
+    <<take_item "Player" "key3">>
+<<endif>>
+===
+
+title: Door4
+---
+<<if not has_item("Player", "key4") && has_item("Player", "key3")>>
+    Partner in Crime: That's the wrong key
+<<elseif not has_item("Player", "key4")>>
+    Partner in Crime: You know you can't open locked doors without unlocking first, right??
+<<else>>
+    <<play_animation "Door4 (Magenta)" "DoorOpen" "false">>
+    <<take_item "Player" "key4">>
+<<endif>>
+===
+
+title: Door5
+---
+<<if not has_item("Player", "key5")>>
+    Partner in Crime: You know you can't open locked doors without unlocking first, right??
+<<else>>
+    <<play_animation "Door5 (Yellow)" "DoorOpen" "false">>
+    //<<take_item "Player" "key5">>
+    Partner in Crime: Lets go, the last room!
+    You: Yayy
+    You: …
+    You: I noticed there seems to be a lack of security except for the rooms
+    Partner in Crime: They just don’t expect geniuses like us to come and rob them
+    Partner in Crime: It just makes your job way easier
+<<endif>>
+===
+
+//________________
+//     Room 4
+//________________
+
+title: Room4
+---
+    <<play_animation "ClosingDoor" "DoorClose" "false">>
+    <<play_animation "LoweringRoof" "LoweringRoof" "false">>
+    *click*
+    Partner in Crime: WHAT DID YOU DO??!?!
+    You: What?
+    Partner in Crime: GET OUT OF THERE FAST, THE ROOF IS COLLAPSING!!
+    You: WHAT??!
+    Partner in Crime: Don’t forget the key though
+===
+
+title: FakeKey
+---
+    Maybe this one?
+===
+
+//________________
+//     Room 5
+//________________
+
+title: Room5
+---
+<<if not has_item("Player", "key6")>>
+    Door: Nuh uh
+<<else>>
+    <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
+    //<<take_item "Player" "key6">>
+    Partner in Crime: You made it!
+    Partner in Crime: Now you just have to put the code into the keypad!
+<<set $objective to "ENTER THE CODE">>
+    You: You didn’t tell me there would be a code!?
+    Partner in Crime: Oh, right…
+    Partner in Crime: I must have it lying around here somewhere…
+    You: How- why do you have that?
+    Partner in Crime: Okay! The code is <i>4832</i>
+    You: You keep ignoring my questions
+    Partner in Crime: I’ll explain once you’re out of there
+    Partner in Crime: We don’t want the guards to come back and catch us, now do we?
+<<endif>>
+===
+
+title: rightCode
+---
+    <<play_animation "LockingDoor" "DoorClose" "false">>
+    <<play_animation "AlarmLight" "Alarm" "false">>
+    *Alarm sounds and doors close*
+    You: Uhhh… there’s nothing in the vault and I’m locked in
+    Partner in Crime: haha
+    Partner in Crime: ahahaaha
+    Partner in Crime: ahahaAHAHAH
+    Partner in Crime: *evil maniacal laugh*
+    Partner in Crime: I can’t believe you were stupid enough to fall for this
+    You: Fall for what?
+    Partner in Crime: This WHOLE vault was a trap to catch you
+    Partner in Crime: I was offered a huge sum of money to hand you over to the police, while I keep my freedom
+    Partner in Crime: How could I possibly say no to that?
+    Partner in Crime: Now all you have to do is wait until the cops arrive and take you away
+    You: You monster
+    Partner in Crime: I know I know, but I’m rich now so it doesn't matter
+    Partner in Crime: Now you go and have fun in jail while I’m going on a well earned vacation
+    Partner in Crime: Bye bye
+    Police: HANDS UP WHERE WE CAN SEE THEM, YOU’RE UNDER ARREST
+===
+
+//________________
+//   Secret Room
+//________________
+
+title: SecretEntrance
+---
+<<if not has_item("Player", "key2")>>
+    You: The door is locked
+    Partner in Crime: You didn’t go into the security room to grab the key??
+    You: … no
+    Partner in Crime: …
+<<else>>
+    <<play_animation "SecretDoor" "DoorOpen" "false">>
+    //<<take_item "Player" "key2">>
+<<endif>>
+===
+
+title: SecDoorClose
+---
+    <<play_animation "SecretDoor" "DoorClose" "false">>
+    <<set_enabled_in_unity "ProximityTrigger!" false>>
+        Partner in Crime: Wait, where are you going?!
+        Partner in Crime: This isn't on the map...
+===
+
+title: SecDoorOpen
+---
+    <<play_animation "SecretDoorExit" "DoorOpen" "false">>
+===
+
+title: PlaceBomb
+---
+    <<take_item "Player" "Dynamite">>
+    <<set_enabled_in_unity "DynamiteDoor" true>>
+===
+
+title: Explosion
+---
+    boom
+===
