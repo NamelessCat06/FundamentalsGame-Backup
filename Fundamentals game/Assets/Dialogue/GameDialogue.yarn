@@ -156,11 +156,16 @@ title: Door5
 //________________
 //     Room 4
 //________________
+title: EnterRoom4
+---
+    <<set_enabled_in_unity "PuzzleStart" true>>
+===
 
 title: Room4
 ---
     <<play_animation "ClosingDoor" "ClosingDoorClose" "false">>
     <<play_animation "LoweringRoof" "LoweringRoof" "false">>
+    <<set_enabled_in_unity "PuzzleStart" false>>
     *click*
     Partner in Crime: WHAT DID YOU DO??!?!
     You: What?
@@ -183,19 +188,32 @@ title: Room5
 <<if not has_item("Player", "key6")>>
     Door: Nuh uh
 <<else>>
-    <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
-    //<<take_item "Player" "key6">>
-    Partner in Crime: You made it!
-    Partner in Crime: Now you just have to put the code into the keypad!
-<<set $objective to "ENTER THE CODE">>
-    You: You didn’t tell me there would be a code!?
-    Partner in Crime: Oh, right…
-    Partner in Crime: I must have it lying around here somewhere…
-    You: How- why do you have that?
-    Partner in Crime: Okay! The code is <i>4832</i>
-    You: You keep ignoring my questions
-    Partner in Crime: I’ll explain once you’re out of there
-    Partner in Crime: We don’t want the guards to come back and catch us, now do we?
+    <<if not has_item("Player", "Dynamite")>>
+        <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
+        //<<take_item "Player" "key6">>
+        Partner in Crime: You made it!
+        Partner in Crime: Now you just have to put the code into the keypad!
+        <<set $objective to "ENTER THE CODE">>
+        You: You didn’t tell me there would be a code!?
+        Partner in Crime: Oh, right…
+        Partner in Crime: I must have it lying around here somewhere…
+        You: How- why do you have that?
+        Partner in Crime: Okay! The code is <i>4832</i>
+        You: You keep ignoring my questions
+        Partner in Crime: I’ll explain once you’re out of there
+        Partner in Crime: We don’t want the guards to come back and catch us, now do we?
+    <<else>>
+        <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
+        Partner in Crime: You made it!
+        Partner in Crime: Now you just have to put the code into the keypad!
+        <<set $objective to "ENTER THE CODE">>
+        You: I found something better...
+        You: It's called dynamite
+        Partner in Crime: Holy shit
+        Partner in Crime: That works, yeah...
+        Partner in Crime: Just blow up the vault and run away with the money I guess...
+        <<set $objective to "EXPLODE THE VAULTDOOR">>
+    <<endif>>
 <<endif>>
 ===
 
@@ -260,5 +278,6 @@ title: PlaceBomb
 
 title: Explosion
 ---
+    <<set_enabled_in_unity "DynamiteDoor" false>>
     boom
 ===
