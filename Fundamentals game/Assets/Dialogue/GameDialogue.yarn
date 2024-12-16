@@ -95,8 +95,8 @@ title: Room2
 
 title: Key2
 ---
-    <<set_enabled_in_unity "Lasers" true>>
-    <<set_enabled_in_unity "ProximityTrigger!" true>>
+<<set_enabled_in_unity "Lasers" true>>
+<<set_enabled_in_unity "ProximityTrigger!" true>>
     You: I got a key
     You: …
     You: I think I activated lasers
@@ -160,14 +160,14 @@ title: Door5
 //________________
 title: EnterRoom4
 ---
-    <<set_enabled_in_unity "PuzzleStart" true>>
+<<set_enabled_in_unity "PuzzleStart" true>>
 ===
 
 title: Room4
 ---
-    <<play_animation "ClosingDoor" "ClosingDoorClose" "false">>
-    <<play_animation "LoweringRoof" "LoweringRoof" "false">>
-    <<set_enabled_in_unity "PuzzleStart" false>>
+<<play_animation "ClosingDoor" "ClosingDoorClose" "false">>
+<<play_animation "LoweringRoof" "LoweringRoof" "false">>
+<<set_enabled_in_unity "PuzzleStart" false>>
     *click*
     Partner in Crime: WHAT DID YOU DO??!?!
     You: What?
@@ -221,8 +221,8 @@ title: Room5
 
 title: rightCode
 ---
-    <<play_animation "LockingDoor" "DoorClose" "false">>
-    <<play_animation "AlarmLight" "Alarm" "false">>
+<<play_animation "LockingDoor" "DoorClose" "false">>
+<<play_animation "AlarmLight" "Alarm" "false">>
     *Alarm sounds and doors close*
     You: Uhhh… there’s nothing in the vault and I’m locked in
     Partner in Crime: haha
@@ -240,6 +240,7 @@ title: rightCode
     Partner in Crime: Now you go and have fun in jail while I’m going on a well earned vacation
     Partner in Crime: Bye bye
     Police: HANDS UP WHERE WE CAN SEE THEM, YOU’RE UNDER ARREST
+<<load_scene "Ending1">>
 ===
 
 //________________
@@ -261,25 +262,25 @@ title: SecretEntrance
 
 title: SecDoorClose
 ---
-    <<play_animation "SecretDoor" "DoorClose" "false">>
-    <<set_enabled_in_unity "ProximityTrigger!" false>>
-        Partner in Crime: Wait, where are you going?!
-        Partner in Crime: This isn't on the map...
+<<play_animation "SecretDoor" "DoorClose" "false">>
+<<set_enabled_in_unity "ProximityTrigger!" false>>
+    Partner in Crime: Wait, where are you going?!
+    Partner in Crime: This isn't on the map...
 ===
 
 title: SecDoorOpen
 ---
-    <<play_animation "SecretDoorExit" "DoorOpen" "false">>
+<<play_animation "SecretDoorExit" "DoorOpen" "false">>
 ===
 
 title: PlaceBomb
 ---
-    <<take_item "Player" "Dynamite">>
-    <<set_enabled_in_unity "DynamiteDoor" true>>
+<<take_item "Player" "Dynamite">>
+<<set_enabled_in_unity "DynamiteDoor" true>>
 ===
 
 title: Explosion
 ---
-    <<set_enabled_in_unity "DynamiteDoor" false>>
+<<set_enabled_in_unity "DynamiteDoor" false>>
     boom
 ===
