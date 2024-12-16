@@ -95,6 +95,8 @@ title: Room2
 
 title: Key2
 ---
+    <<set_enabled_in_unity "Lasers" true>>
+    <<set_enabled_in_unity "ProximityTrigger!" true>>
     You: I got a key
     You: …
     You: I think I activated lasers
@@ -211,7 +213,7 @@ title: Room5
         You: It's called dynamite
         Partner in Crime: Holy shit
         Partner in Crime: That works, yeah...
-        Partner in Crime: Just blow up the vault and run away with the money I guess...
+        Partner in Crime: Just blow up the vault and we can run away with the money I guess...
         <<set $objective to "EXPLODE THE VAULTDOOR">>
     <<endif>>
 <<endif>>
