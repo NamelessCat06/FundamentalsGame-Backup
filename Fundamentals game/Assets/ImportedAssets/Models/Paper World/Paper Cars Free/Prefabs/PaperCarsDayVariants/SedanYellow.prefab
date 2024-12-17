@@ -86,7 +86,7 @@ PrefabInstance:
     - target: {fileID: 2918600399711409909, guid: 84158327ffde7ea41b33d0c7bb836b9f,
         type: 3}
       propertyPath: m_Name
-      value: PaperCarsSedans6DayYellow Variant
+      value: SedanYellow
       objectReference: {fileID: 0}
     - target: {fileID: 3710983588849858336, guid: 84158327ffde7ea41b33d0c7bb836b9f,
         type: 3}

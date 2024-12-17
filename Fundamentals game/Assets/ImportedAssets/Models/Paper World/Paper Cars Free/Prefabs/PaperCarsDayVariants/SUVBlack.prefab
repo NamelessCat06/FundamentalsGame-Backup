@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 4956111222285402539, guid: 2ebe4b759dbad124995e809d1a276fb2,
         type: 3}
       propertyPath: m_Name
-      value: PaperCarsSUV1DayBlack Variant
+      value: SUVBlack
       objectReference: {fileID: 0}
     - target: {fileID: 5190061243874622719, guid: 2ebe4b759dbad124995e809d1a276fb2,
         type: 3}
