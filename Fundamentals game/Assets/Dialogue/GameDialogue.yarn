@@ -21,11 +21,13 @@ title: Outside
     You: Yes yes…
     You: But why do I have to go in alone? Can’t we just both go, like normally?
     Partner in Crime: Well, this vault is trickier than the past ones, so one of us will have to guide the other one through it, got it?
-    Partner in Crime: Besides, I’m the one that got us the map of the vault, so it’s only fair for you to go in.
-    You: Sure….
-    You: How did you even get that map? You never told me
-    Partner in Crime: That’s not important
-    Partner in Crime: Hurry up, before the guards grow suspicious of us
+    Partner in Crime: Besides, I’m the one that got us the map of the vault, so it’s only fair for you to go in
+    You: Sure…
+        -> How did you even get that map?
+            Partner in Crime: I got it from an acquaintance of mine
+            Partner in Crime: They gave this place a tip, said there would be a lot of money
+            Partner in Crime: Now hurry up, before the guards grow suspicious of us
+        -> Okay, let's go
 <<set $objective to "Enter the bank">>
 ===
 
@@ -160,10 +162,10 @@ title: Door5
     //<<take_item "Player" "key5">>
     Partner in Crime: Lets go, the last room!
     You: Yayy
-    You: …
-    You: I noticed there seems to be a lack of security except for the rooms
-    Partner in Crime: They just don’t expect geniuses like us to come and rob them
-    Partner in Crime: It just makes your job way easier
+        -> There seems to be a lack of security, except for the rooms
+            Partner in Crime: They just don’t expect geniuses like us to come and rob them
+            Partner in Crime: It just makes your job way easier
+        -> ...
 <<endif>>
 ===
 
@@ -236,18 +238,18 @@ title: rightCode
 <<play_animation "LockingDoor" "DoorClose" "false">>
 <<play_animation "AlarmLight" "Alarm" "false">>
     *Alarm sounds and doors close*
-    You: Uhhh… there’s nothing in the vault and I’m locked in
+    You: Uhhh… the vault didn't open and I’m locked in
     Partner in Crime: haha
     Partner in Crime: ahahaaha
     Partner in Crime: ahahaAHAHAH
-    Partner in Crime: *evil maniacal laugh*
-    Partner in Crime: I can’t believe you were stupid enough to fall for this
+    Partner in Crime: MUAHAHAHAHHAA
+    Partner in Crime: I can’t believe you were STUPID enough to fall for this
     You: Fall for what?
     Partner in Crime: This WHOLE vault was a trap to catch you
-    Partner in Crime: I was offered a huge sum of money to hand you over to the police, while I keep my freedom
+    Partner in Crime: I was offered a so much money money to hand you over to the police
     Partner in Crime: How could I possibly say no to that?
     Partner in Crime: Now all you have to do is wait until the cops arrive and take you away
-    You: You monster
+    You: You... MONSTER
     Partner in Crime: I know I know, but I’m rich now so it doesn't matter
     Partner in Crime: Now you go and have fun in jail while I’m going on a well earned vacation
     Partner in Crime: Bye bye
