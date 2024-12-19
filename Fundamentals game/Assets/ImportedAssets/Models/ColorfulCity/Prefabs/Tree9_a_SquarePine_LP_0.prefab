@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7526305385112012840}
   - component: {fileID: 4273431936627504337}
   - component: {fileID: 5788107036635561103}
-  - component: {fileID: 7081194539294554990}
+  - component: {fileID: -6780317586206520026}
   m_Layer: 0
   m_Name: Tree9_a_SquarePine_LP_0
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554264161889533965}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 98aea8eae581c824da7dcaa2d62dd68b, type: 3}
 --- !u!23 &4273431936627504337
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     schemeGrid: 64
     currentScheme: 0
   mesh: {fileID: 4300000, guid: 98aea8eae581c824da7dcaa2d62dd68b, type: 3}
---- !u!136 &7081194539294554990
+--- !u!136 &-6780317586206520026
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.08369071
-  m_Height: 1.6312394
+  m_Radius: 0.0761715
+  m_Height: 1.6499026
   m_Direction: 1
-  m_Center: {x: -0.007164754, y: 0.7926923, z: 0.000000022351742}
+  m_Center: {x: -0.008087039, y: 0.7833607, z: 0.000000022351744}

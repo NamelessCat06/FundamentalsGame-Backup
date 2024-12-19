@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4820116797953874565}
   - component: {fileID: 1286050216824596092}
   - component: {fileID: 8846702172488660747}
-  - component: {fileID: 4730742213286268785}
+  - component: {fileID: -7329489989747921994}
   m_Layer: 0
   m_Name: Tree8_a_Twisted_LP_0
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712731850291204768}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 8d5816f2934a08d4f8886e4b325864ce, type: 3}
 --- !u!23 &1286050216824596092
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     schemeGrid: 64
     currentScheme: 0
   mesh: {fileID: 4300000, guid: 8d5816f2934a08d4f8886e4b325864ce, type: 3}
---- !u!136 &4730742213286268785
+--- !u!136 &-7329489989747921994
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.06270242
-  m_Height: 1.2652878
+  m_Radius: 0.050673723
+  m_Height: 1.2775952
   m_Direction: 1
-  m_Center: {x: -0.0044305474, y: 0.609503, z: 0.00006392598}
+  m_Center: {x: -0.008754581, y: 0.60334927, z: -0.00083286315}

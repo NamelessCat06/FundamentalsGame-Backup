@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1399569276585468195}
   - component: {fileID: 4634430227352034778}
   - component: {fileID: 3120421310298274963}
-  - component: {fileID: 2355133765003598919}
+  - component: {fileID: 7323172526269067144}
   m_Layer: 0
   m_Name: Building7_a_Tall2_LP_0
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6371498017567320326}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 1116df919725f4b4ab47f8b4ba0f6562, type: 3}
 --- !u!23 &4634430227352034778
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     schemeGrid: 64
     currentScheme: 0
   mesh: {fileID: 4300000, guid: 1116df919725f4b4ab47f8b4ba0f6562, type: 3}
---- !u!65 &2355133765003598919
+--- !u!65 &7323172526269067144
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,5 +120,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0909467, y: 4.5759172, z: 3.6683502}
-  m_Center: {x: -1.4734952e-15, y: 2.2880793, z: -0.08550644}
+  m_Size: {x: 2.0367799, y: 4.5759172, z: 3.640842}
+  m_Center: {x: 0, y: 2.2880793, z: -0.07896304}

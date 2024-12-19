@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2936806657434940786}
   - component: {fileID: 8934345009141025163}
   - component: {fileID: 3904034076298984772}
-  - component: {fileID: 3171636457928785607}
+  - component: {fileID: 1982375490073285131}
   m_Layer: 0
   m_Name: Building10_a_Small_LP_0
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7188305205101903191}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 206afda5541f40845b4519ddbec17d85, type: 3}
 --- !u!23 &8934345009141025163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     schemeGrid: 64
     currentScheme: 0
   mesh: {fileID: 4300000, guid: 206afda5541f40845b4519ddbec17d85, type: 3}
---- !u!65 &3171636457928785607
+--- !u!65 &1982375490073285131
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,5 +120,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0044496, y: 1.1352665, z: 2.5033274}
-  m_Center: {x: 0.011577427, y: 0.5674921, z: 0.010951161}
+  m_Size: {x: 0.9485911, y: 1.1221904, z: 2.460359}
+  m_Center: {x: 0.01802279, y: 0.56095403, z: 0.010951042}

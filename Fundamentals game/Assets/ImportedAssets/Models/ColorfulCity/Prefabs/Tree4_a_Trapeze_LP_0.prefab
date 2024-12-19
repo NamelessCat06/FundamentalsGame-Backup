@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1420364928673567050}
   - component: {fileID: 4650722030713908659}
   - component: {fileID: 3141142066588714575}
-  - component: {fileID: 3245238994271730575}
+  - component: {fileID: 1329855766836281343}
   m_Layer: 0
   m_Name: Tree4_a_Trapeze_LP_0
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6392429793821530479}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: c5125654829f3d9479c8564292ccb899, type: 3}
 --- !u!23 &4650722030713908659
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     schemeGrid: 64
     currentScheme: 0
   mesh: {fileID: 4300000, guid: c5125654829f3d9479c8564292ccb899, type: 3}
---- !u!136 &3245238994271730575
+--- !u!136 &1329855766836281343
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.06796189
-  m_Height: 1.9209802
+  m_Radius: 0.06157201
+  m_Height: 1.9498312
   m_Direction: 1
-  m_Center: {x: -0.0022897348, y: 0.9462013, z: 0.0007966161}
+  m_Center: {x: -0.00364344, y: 0.9317758, z: 0.0045167543}

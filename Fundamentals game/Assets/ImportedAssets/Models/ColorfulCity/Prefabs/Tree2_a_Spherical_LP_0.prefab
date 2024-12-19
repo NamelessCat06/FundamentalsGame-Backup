@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3569742592005753454}
   - component: {fileID: 7113097589668329111}
   - component: {fileID: 696922734233023606}
-  - component: {fileID: 2155635443848101397}
+  - component: {fileID: 8463098247568786350}
   m_Layer: 0
   m_Name: Tree2_a_Spherical_LP_0
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8829899287892329035}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 3ca6e983415658b4d82c0c33f3c693ff, type: 3}
 --- !u!23 &7113097589668329111
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     schemeGrid: 64
     currentScheme: 0
   mesh: {fileID: 4300000, guid: 3ca6e983415658b4d82c0c33f3c693ff, type: 3}
---- !u!136 &2155635443848101397
+--- !u!136 &8463098247568786350
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.06865687
-  m_Height: 1.6112647
+  m_Radius: 0.12252986
+  m_Height: 1.6634798
   m_Direction: 1
-  m_Center: {x: -0.006409459, y: 0.7622936, z: -0.000051178038}
+  m_Center: {x: -0.017925482, y: 0.736186, z: 0.0008710101}

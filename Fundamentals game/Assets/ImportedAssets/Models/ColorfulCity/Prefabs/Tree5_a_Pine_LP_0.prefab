@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8002686037481162210}
   - component: {fileID: 4338032857340508443}
   - component: {fileID: 6282225698102396472}
-  - component: {fileID: 7928660753213854512}
+  - component: {fileID: 4836911557506209573}
   m_Layer: 0
   m_Name: Tree5_a_Pine_LP_0
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2598330603796614599}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 7c37a3d113916f44b906d808b7e77dfa, type: 3}
 --- !u!23 &4338032857340508443
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
     schemeGrid: 64
     currentScheme: 0
   mesh: {fileID: 4300000, guid: 7c37a3d113916f44b906d808b7e77dfa, type: 3}
---- !u!136 &7928660753213854512
+--- !u!136 &4836911557506209573
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +120,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.069706
-  m_Height: 1.4482529
+  m_Radius: 0.07671487
+  m_Height: 1.3993219
   m_Direction: 1
-  m_Center: {x: -0.0066631436, y: 0.6548996, z: -0.00092243403}
+  m_Center: {x: -0.009406894, y: 0.6793651, z: -0.0032035708}
