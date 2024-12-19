@@ -4,12 +4,14 @@
 
 title: Start
 ---
-<<declare $objective = "started">>
+<<declare $border = "no">>
+<<declare $objective = "not started">>
 <<set $objective = "Talk to your partner in crime">>
 ===
 
 title: Outside
 ---
+<<set $border = "yes">>
 <<set $objective to "">>
     Partner in Crime: Okay so you know what we’re here for
     You: Wha~?
@@ -25,6 +27,16 @@ title: Outside
     Partner in Crime: That’s not important
     Partner in Crime: Hurry up, before the guards grow suspicious of us
 <<set $objective to "Enter the bank">>
+===
+
+title: Border
+---
+<<if $border == "no">>
+    <i>I should go talk to Timobob</i>
+<<elseif $border == "yes">>
+    <i>I shouldn't waste time</i>
+    <i>Let's get this over with</i>
+<<endif>>
 ===
 
 //________________
