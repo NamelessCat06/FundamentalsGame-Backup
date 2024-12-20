@@ -97,7 +97,7 @@ title: Room2
 ---
 <<if not has_item("Player", "key2")>>
     You: The door is locked
-    Partner in Crime: You didn’t go into the security room to grab the key??
+    Partner in Crime: You didn’t go into the server room to grab the card??
     You: … no
     Partner in Crime: …
 <<else>>
@@ -125,7 +125,7 @@ title: Key2
 
 title: Room3
 ---
-    Partner in Crime: Okay in this room there should be 3 keys hidden
+    Partner in Crime: Okay in this room there should be 3 keycards hidden
     Partner in Crime: You will need them to open all the doors
     Partner in Crime: ...
     Partner in Crime: If you can find the doors at least
@@ -144,7 +144,7 @@ title: Door3
 title: Door4
 ---
 <<if not has_item("Player", "key4") && has_item("Player", "key3")>>
-    Partner in Crime: That's the wrong key
+    Partner in Crime: That's the wrong one
 <<elseif not has_item("Player", "key4")>>
     Partner in Crime: You know you can't open locked doors without unlocking first, right??
 <<else>>
@@ -187,7 +187,7 @@ title: Room4
     You: What?
     Partner in Crime: GET OUT OF THERE FAST, THE ROOF IS COLLAPSING!!
     You: WHAT??!
-    Partner in Crime: Don’t forget the key though
+    Partner in Crime: Don’t forget the card though
 ===
 
 title: FakeKey
@@ -210,14 +210,25 @@ title: Room5
         Partner in Crime: You made it!
         Partner in Crime: Now you just have to put the code into the keypad!
         <<set $objective to "ENTER THE CODE">>
-        You: You didn’t tell me there would be a code!?
-        Partner in Crime: Oh, right…
-        Partner in Crime: I must have it lying around here somewhere…
-        You: How- why do you have that?
-        Partner in Crime: Okay! The code is <i>4832</i>
-        You: You keep ignoring my questions
-        Partner in Crime: I’ll explain once you’re out of there
-        Partner in Crime: We don’t want the guards to come back and catch us, now do we?
+            -> You didn’t tell me there would be a code!?
+                Partner in Crime: Oh, right…
+                Partner in Crime: Well you should have it on you
+                Partner in Crime: ... I think
+                -> Yes! I got it
+                -> What do you mean?
+                    Partner in Crime: Huh, the keycards should have the code on them
+                    Partner in Crime: Don't they?
+                    -> I see it
+                        Partner in Crime: Great!
+                    -> I really can't find it
+                        Partner in Crime: Fine, I might have it somewhere around here...
+                        Partner in Crime: The code is <i>4832</i>
+                        -> Thank you!
+                            Partner in Crime: Yes yes hurry up
+                        -> How- why do you have that?
+                            Partner in Crime: I’ll explain once you’re out of there
+                            Partner in Crime: We don’t want the guards to come back and catch us, now do we?
+            -> Oh, right, yes
     <<else>>
         <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
         Partner in Crime: You made it!
@@ -263,12 +274,7 @@ title: rightCode
 
 title: SecretEntrance
 ---
-<<if not has_item("Player", "key2")>>
-    You: The door is locked
-    Partner in Crime: You didn’t go into the security room to grab the key??
-    You: … no
-    Partner in Crime: …
-<<else>>
+<<if has_item("Player", "key2")>>
     <<play_animation "SecretDoor" "DoorOpen" "false">>
     //<<take_item "Player" "key2">>
 <<endif>>
