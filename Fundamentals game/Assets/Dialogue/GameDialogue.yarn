@@ -5,8 +5,7 @@
 title: Start
 ---
 <<declare $border = "no">>
-<<declare $objective = "not started">>
-<<set $objective = "Talk to your partner in crime">>
+<<declare $objective = "Talk to your partner in crime">>
 ===
 
 title: Outside
@@ -111,7 +110,7 @@ title: Key2
 ---
 <<set_enabled_in_unity "Lasers" true>>
 <<set_enabled_in_unity "ProximityTrigger!" true>>
-    You: I got a key
+    You: I got a keycard
     You: …
     You: I think I activated lasers
     Partner in Crime: DON'T TOUCH THEM

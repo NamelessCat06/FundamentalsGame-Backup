@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 5669413258659910938}
   - component: {fileID: 1322811437515990684}
   m_Layer: 0
-  m_Name: LaserMesh
+  m_Name: LaserCollider
   m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
