@@ -14,13 +14,23 @@ public class Cars : MonoBehaviour
         carspawn1 = transform.position;
         carspawn2 = transform.position;
         carspawn3 = transform.position;
+        StartCoroutine(SpawnCar());
     }
 
     // Update is called once per frame
     void Update()
     {
-        Instantiate(car1[Random.Range(0, car1.Length)],carspawn1,Quaternion.identity);
-        Instantiate(car2[Random.Range(0, car2.Length)],carspawn2,Quaternion.identity);
-        Instantiate(car3[Random.Range(0, car3.Length)],carspawn3,Quaternion.identity);
+
+    }
+
+    private IEnumerator SpawnCar()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(1);
+            Instantiate(car1[Random.Range(0, car1.Length)],carspawn1,Quaternion.identity);
+            Instantiate(car2[Random.Range(0, car2.Length)],carspawn2,Quaternion.identity);
+            Instantiate(car3[Random.Range(0, car3.Length)],carspawn3,Quaternion.identity);
+        }
     }
 }
