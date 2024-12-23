@@ -137,6 +137,7 @@ title: Door3
 <<else>>
     <<play_animation "Door3 (Blue)" "DoorOpen" "false">>
     <<take_item "Player" "key3">>
+    <<set_enabled_in_unity "ProximityTrigger@" false>>
 <<endif>>
 ===
 
@@ -149,6 +150,7 @@ title: Door4
 <<else>>
     <<play_animation "Door4 (Magenta)" "DoorOpen" "false">>
     <<take_item "Player" "key4">>
+    <<set_enabled_in_unity "ProximityTrigger#" false>>
 <<endif>>
 ===
 
@@ -158,6 +160,7 @@ title: Door5
     Partner in Crime: You know you can't open locked doors without unlocking first, right??
 <<else>>
     <<play_animation "Door5 (Yellow)" "DoorOpen" "false">>
+    <<set_enabled_in_unity "ProximityTrigger$" false>>
     //<<take_item "Player" "key5">>
     Partner in Crime: Lets go, the last room!
     You: Yayy
