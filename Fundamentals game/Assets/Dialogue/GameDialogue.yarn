@@ -299,10 +299,13 @@ title: PlaceBomb
 ---
 <<take_item "Player" "Dynamite">>
 <<set_enabled_in_unity "DynamiteDoor" true>>
+<<set_enabled_in_unity "ExplosionDoor" true>>
+<<set_enabled_in_unity "VaultDoor" false>>
 ===
 
 title: Explosion
 ---
-<<set_enabled_in_unity "DynamiteDoor" false>>
+    //<<set_enabled_in_unity "DynamiteDoor" false>>
+    <<set_enabled_in_unity "Explosion02" true>>
     boom
 ===
