@@ -12,21 +12,21 @@ title: Outside
 ---
 <<set $border = "yes">>
 <<set $objective to "">>
-    Partner in Crime: Okay so you know what we’re here for
+    Partner in Crime: Okay, so you know what we’re here for
     You: Wha~?
     Partner in Crime: *Sigh*
     Partner in Crime: We are here to rob the vault
     Partner in Crime: You’ll go in while I guide you through it, remember?
     You: Yes yes…
-    You: But why do I have to go in alone? Can’t we just both go, like normally?
-    Partner in Crime: Well, this vault is trickier than the past ones, so one of us will have to guide the other one through it, got it?
+    You: But why do I have to go in alone? Can’t we just... both go? like normally?
+    Partner in Crime: Well, this vault is trickier than the past ones, so one of us will have to guide the other one through it?
     Partner in Crime: Besides, I’m the one that got us the map of the vault, so it’s only fair for you to go in
     You: Sure…
         -> How did you even get that map?
             Partner in Crime: I got it from an acquaintance of mine
             Partner in Crime: They gave this place a tip, said there would be a lot of money
             Partner in Crime: Now hurry up, before the guards grow suspicious of us
-        -> Okay, let's go
+        -> Okay, let's do this!
 <<set $objective to "Enter the bank">>
 ===
 
@@ -51,9 +51,9 @@ title: Lobby
     You: It sure does
     Partner in Crime: Good
     Partner in Crime: First you will have to find the entrance to the vault
-    Partner in Crime: That shouldn’t be that difficult
+    Partner in Crime: That shouldn’t be too difficult
     Partner in Crime: Just make sure to not be seen
-    You: That won’t be a problem considering there is basically no one here
+    You: That won’t be a problem... considering there is basically no one here
     You: …
     You: Strange
 <<set $objective to "FIND THE EMPLOYEES ENTRANCE">>
@@ -67,9 +67,9 @@ title: Room1
 ---
 <<set $objective to "GET TO THE OTHER SIDE">>
     You: Found the entrance
-    Partner in Crime: Good… good
+    Partner in Crime: Good... good...
     Partner in Crime: Now be careful where you walk, there are traps everywhere
-    Partner in Crime: There should be a way to know the right path
+    Partner in Crime: There should be a way to know the right path...
     Partner in Crime: Make sure to look around for clues
 ===
 
@@ -80,14 +80,14 @@ title: Room1
 title: EnterRoom2
 ---
 <<if not has_item("Player", "key1")>>
-    You: This door is blocking the path to the exit
+    You: This door is blocking the path to the vault
     Partner in Crime: Hmmm…
     Partner in Crime: There must be a way to open that door
 <<else>>
     <<play_animation "Door1 (Red)" "DoorOpen" "false">>
     <<set $objective to " ">>
     //<<take_item "Player" "key1">>
-    You: I’m in the next room… but is just empty…
+    You: I’m in the next room… but it's just empty…
     Partner in Crime: According to the map there is nothing wrong here
     Partner in Crime: You can probably just go for it
     <<set $objective to "OPEN THE DOOR">>
@@ -129,7 +129,7 @@ title: Key2
 title: Room3
 ---
 <<set $objective to "OPEN ALL THE DOORS 0/3">>
-    Partner in Crime: Okay in this room there should be 3 keycards hidden
+    Partner in Crime: Okay, in this room there should be 3 keycards hidden
     Partner in Crime: You will need them to open all the doors
     Partner in Crime: ...
     Partner in Crime: If you can find the doors at least
@@ -138,7 +138,7 @@ title: Room3
 title: Door3
 ---
 <<if not has_item("Player", "key3")>>
-    Partner in Crime: You know you can't open locked doors without unlocking first, right??
+    Partner in Crime: You know you can't open doors without unlocking them first, right??
 <<else>>
     <<play_animation "Door3 (Blue)" "DoorOpen" "false">>
     <<take_item "Player" "key3">>
@@ -152,7 +152,7 @@ title: Door4
 <<if not has_item("Player", "key4") && has_item("Player", "key3")>>
     Partner in Crime: That's the wrong one
 <<elseif not has_item("Player", "key4")>>
-    Partner in Crime: You know you can't open locked doors without unlocking first, right??
+    Partner in Crime: You seem to have a considerable lack of keycard
 <<else>>
     <<play_animation "Door4 (Magenta)" "DoorOpen" "false">>
     <<take_item "Player" "key4">>
@@ -164,7 +164,9 @@ title: Door4
 title: Door5
 ---
 <<if not has_item("Player", "key5")>>
-    Partner in Crime: You know you can't open locked doors without unlocking first, right??
+    Partner in Crime: Trying to open a door without unlocking it...
+    Partner in Crime: At least you're stupid enough so you'll never even get the chance to invite a vampire in
+    Partner in Crime: You wouldn't even be able to open the door
 <<else>>
     <<play_animation "Door5 (Yellow)" "DoorOpen" "false">>
     <<set_enabled_in_unity "ProximityTrigger$" false>>
@@ -233,7 +235,7 @@ title: Room5
                         Partner in Crime: Fine, I might have it somewhere around here...
                         Partner in Crime: The code is <i>4832</i>
                         -> Thank you!
-                            Partner in Crime: Yes yes hurry up
+                            Partner in Crime: Yes... yes... hurry up
                         -> How- why do you have that?
                             Partner in Crime: I’ll explain once you’re out of there
                             Partner in Crime: We don’t want the guards to come back and catch us, now do we?
@@ -293,6 +295,7 @@ title: SecDoorClose
 ---
 <<play_animation "SecretDoor" "DoorClose" "false">>
 <<set_enabled_in_unity "ProximityTrigger!" false>>
+<<set $objective to "???">>
     Partner in Crime: Wait, where are you going?!
     Partner in Crime: This isn't on the map...
 ===
