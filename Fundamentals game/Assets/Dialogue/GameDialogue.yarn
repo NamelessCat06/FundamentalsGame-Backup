@@ -164,7 +164,7 @@ title: Door5
     //<<take_item "Player" "key5">>
     Partner in Crime: Lets go, the last room!
     You: Yayy
-        -> There seems to be a lack of security, except for the rooms
+        -> There seems to be a lack of security
             Partner in Crime: They just don’t expect geniuses like us to come and rob them
             Partner in Crime: It just makes your job way easier
         -> ...
