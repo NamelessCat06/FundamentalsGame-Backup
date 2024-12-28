@@ -56,7 +56,7 @@ title: Lobby
     You: That won’t be a problem... considering there is basically no one here
     You: …
     You: Strange
-<<set $objective to "FIND THE EMPLOYEES ENTRANCE">>
+<<set $objective to "Find the employees entrance">>
 ===
 
 //________________
@@ -65,7 +65,7 @@ title: Lobby
 
 title: Room1
 ---
-<<set $objective to "GET TO THE OTHER SIDE">>
+<<set $objective to "Get to the other side">>
     You: Found the entrance
     Partner in Crime: Good... good...
     Partner in Crime: Now be careful where you walk, there are traps everywhere
@@ -90,7 +90,7 @@ title: EnterRoom2
     You: I’m in the next room… but it's just empty…
     Partner in Crime: According to the map there is nothing wrong here
     Partner in Crime: You can probably just go for it
-    <<set $objective to "OPEN THE DOOR">>
+    <<set $objective to "Open the door">>
 <<endif>>
 ===
 
@@ -113,7 +113,7 @@ title: Key2
 ---
 <<set_enabled_in_unity "Lasers" true>>
 <<set_enabled_in_unity "ProximityTrigger!" true>>
-<<set $objective to "DODGE THE LASERS">>
+<<set $objective to "Dodge the lasers">>
     You: I got a keycard
     You: …
     You: I think I activated lasers
@@ -128,7 +128,7 @@ title: Key2
 
 title: Room3
 ---
-<<set $objective to "OPEN ALL THE DOORS 0/3">>
+<<set $objective to "Open all the doors 0/3">>
     Partner in Crime: Okay, in this room there should be 3 keycards hidden
     Partner in Crime: You will need them to open all the doors
     Partner in Crime: ...
@@ -143,7 +143,7 @@ title: Door3
     <<play_animation "Door3 (Blue)" "DoorOpen" "false">>
     <<take_item "Player" "key3">>
     <<set_enabled_in_unity "ProximityTrigger@" false>>
-    <<set $objective to "OPEN ALL THE DOORS 1/3">>
+    <<set $objective to "Open all the doors 1/3">>
 <<endif>>
 ===
 
@@ -157,7 +157,7 @@ title: Door4
     <<play_animation "Door4 (Magenta)" "DoorOpen" "false">>
     <<take_item "Player" "key4">>
     <<set_enabled_in_unity "ProximityTrigger#" false>>
-    <<set $objective to "OPEN ALL THE DOORS 2/3">>
+    <<set $objective to "Open all the doors 2/3">>
 <<endif>>
 ===
 
@@ -220,7 +220,7 @@ title: Room5
         //<<take_item "Player" "key6">>
         Partner in Crime: You made it!
         Partner in Crime: Now you just have to put the code into the keypad!
-        <<set $objective to "ENTER THE CODE">>
+        <<set $objective to "Enter the code">>
             -> You didn’t tell me there would be a code!?
                 Partner in Crime: Oh, right…
                 Partner in Crime: Well you should have it on you
@@ -244,13 +244,13 @@ title: Room5
         <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
         Partner in Crime: You made it!
         Partner in Crime: Now you just have to put the code into the keypad!
-        <<set $objective to "ENTER THE CODE">>
+        <<set $objective to "Enter the code">>
         You: I found something better...
         You: It's called dynamite
         Partner in Crime: Holy shit
         Partner in Crime: That works, yeah...
         Partner in Crime: Just blow up the vault and we can run away with the money I guess...
-        <<set $objective to "EXPLODE THE VAULTDOOR">>
+        <<set $objective to "Explode the vaultdoor">>
     <<endif>>
 <<endif>>
 ===
