@@ -66,7 +66,7 @@ title: Lobby
 title: Room1
 ---
 <<set $objective to "Get to the other side">>
-<<play_animation "Door" "DoorOpenSwing" false>>
+<<play_animation "DoorSwing" "DoorOpenSwing" false>>
     You: Found the entrance
     Partner in Crime: Good... good...
     Partner in Crime: Now be careful where you walk, there are traps everywhere
