@@ -92,6 +92,7 @@ title: EnterRoom2
     Partner in Crime: According to the map there is nothing wrong here
     Partner in Crime: You can probably just go for it
     <<set $objective to "Open the door">>
+    <<declare $window = "0">>
 <<endif>>
 ===
 
@@ -121,6 +122,25 @@ title: Key2
     Partner in Crime: DON'T TOUCH THEM
     Partner in Crime: The alarm might go off when you do
     Partner in Crime: Just get out of there as fast as possible
+===
+
+title: Window
+---
+<<if $window == "0">>
+    Partner in Crime: Did you just try to jump through a window?
+    <<set $window to "1">>
+<<elseif $window == "1">>
+    Partner in Crime: Why did you do it again???
+    <<set $window to "2">>
+<<elseif $window == "2">>
+    Partner in Crime: Are you stupid or something?
+    <<set $window to "3">>
+<<elseif $window == "3">>
+    Partner in Crime: You know what, I'm not even asking anymore
+    <<set $window to "4">>
+<<elseif $window == "4">>
+    Partner in Crime: ...
+<<endif>>
 ===
 
 //________________
@@ -260,6 +280,7 @@ title: rightCode
 ---
 <<play_animation "LockingDoor" "DoorClose" "false">>
 <<set_enabled_in_unity "AlarmLight" true>>
+<<set_enabled_in_unity "ProximityTrigger%" false>>
     *Alarm sounds and doors close*
     You: Uhhh… the vault didn't open and I’m locked in
     Partner in Crime: haha
