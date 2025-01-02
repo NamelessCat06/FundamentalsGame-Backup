@@ -19,7 +19,7 @@ title: Outside
     Partner in Crime: You’ll go in while I guide you through it, remember?
     You: Yes yes…
     You: But why do I have to go in alone? Can’t we just... both go? like normally?
-    Partner in Crime: Well, this vault is trickier than the past ones, so one of us will have to guide the other one through it?
+    Partner in Crime: Well, this vault is trickier than the past ones, so one of us will have to guide the other one through it
     Partner in Crime: Besides, I’m the one that got us the map of the vault, so it’s only fair for you to go in
     You: Sure…
         -> How did you even get that map?
@@ -259,7 +259,7 @@ title: Room5
 title: rightCode
 ---
 <<play_animation "LockingDoor" "DoorClose" "false">>
-<<play_animation "AlarmLight" "Alarm" "false">>
+<<set_enabled_in_unity "AlarmLight" true>>
     *Alarm sounds and doors close*
     You: Uhhh… the vault didn't open and I’m locked in
     Partner in Crime: haha
