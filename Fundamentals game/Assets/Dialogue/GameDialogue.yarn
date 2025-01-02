@@ -53,7 +53,7 @@ title: Lobby
     Partner in Crime: First you will have to find the entrance to the vault
     Partner in Crime: That shouldn’t be too difficult
     Partner in Crime: Just make sure to not be seen
-    You: That won’t be a problem... considering there is basically no one here
+    You: That won’t be a problem... considering there is no one here
     You: …
     You: Strange
 <<set $objective to "Find the employees entrance">>
