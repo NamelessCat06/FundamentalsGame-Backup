@@ -281,7 +281,6 @@ title: rightCode
 <<play_animation "LockingDoor" "DoorClose" "false">>
 <<set_enabled_in_unity "AlarmLight" true>>
 <<set_enabled_in_unity "ProximityTrigger%" false>>
-    *Alarm sounds and doors close*
     You: Uhhh… the vault didn't open and I’m locked in
     Partner in Crime: haha
     Partner in Crime: ahahaaha
@@ -339,5 +338,6 @@ title: Explosion
 ---
     //<<set_enabled_in_unity "DynamiteDoor" false>>
     <<set_enabled_in_unity "Explosion02" true>>
+    <<set_enabled_in_unity "DynamiteBoom Emitter" true>>
     boom
 ===

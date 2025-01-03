@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4342971585496908643}
   - component: {fileID: 5472415572708334512}
   - component: {fileID: 3934088309053487366}
+  - component: {fileID: 4666463028785392676}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -142,6 +143,37 @@ MonoBehaviour:
   canBeActivated: 1
   inventory: {fileID: 0}
   item: {fileID: 0}
+--- !u!114 &4666463028785392676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8477474593468189356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 765140847
+      Data2: 1195821191
+      Data3: 307486881
+      Data4: -1977102028
+    Path: event:/Inside/PickUpItem
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &4699113198627843609
 PrefabInstance:
   m_ObjectHideFlags: 0
