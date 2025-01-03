@@ -238,6 +238,7 @@ title: Room5
     <<if not has_item("Player", "Dynamite")>>
         <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
         <<set $objective to " ">>
+        <<declare $code = "0">>
         //<<take_item "Player" "key6">>
         Partner in Crime: You made it!
         Partner in Crime: Now you just have to put the code into the keypad!
@@ -298,6 +299,40 @@ title: rightCode
     Partner in Crime: Bye bye
     Police: HANDS UP WHERE WE CAN SEE THEM, YOU’RE UNDER ARREST
 <<load_scene "Ending1">>
+===
+
+title: wrongCode
+---
+<<if $code == "0">>
+    Partner in Crime: Hmmm.... That's not right... Take a look at the cards again
+    <<set $code to "1">>
+<<elseif $code == "1">>
+    Partner in Crime: The cards are in your pocket right?
+    <<set $code to "2">>
+<<elseif $code == "2">>
+    Partner in Crime: They should be in the right order
+    <<set $code to "3">>
+<<elseif $code == "3">>
+    Partner in Crime: Would you like to try one last time?
+        -> Yes
+            <<set $code to "4">>
+        -> No
+            Partner in Crime: Okay, I might have it somewhere around here...
+            Partner in Crime: The code is <i>4832</i>
+                 -> Thank you!
+                    Partner in Crime: Yes... yes... hurry up
+                -> How- why do you have that?
+                    Partner in Crime: I’ll explain once you’re out of there
+                    Partner in Crime: We don’t want the guards to come back and catch us, now do we?
+<<elseif $code == "4">>
+    Partner in Crime: Okay, I might have the code somewhere around here...
+    Partner in Crime: The code is <i>4832</i>
+        -> Thank you!
+            Partner in Crime: Yes... yes... hurry up
+        -> How- why do you have that?
+            Partner in Crime: I’ll explain once you’re out of there
+            Partner in Crime: We don’t want the guards to come back and catch us, now do we?
+<<endif>>
 ===
 
 //________________
