@@ -150,10 +150,10 @@ title: Window
 title: Room3
 ---
 <<set $objective to "Open all the doors 0/3">>
-    Partner in Crime: Okay, in this room there should be 3 keycards hidden
+    Partner in Crime: Okay, in this room there should be 3 codes hidden
     Partner in Crime: You will need them to open all the doors
     Partner in Crime: ...
-    Partner in Crime: If you can find the doors at least
+    Partner in Crime: They might be spread around though... I'm not sure
 ===
 
 title: rightDoor3
