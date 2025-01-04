@@ -6,28 +6,38 @@ title: Start
 ---
 <<declare $border = "no">>
 <<declare $objective = "Talk to your partner in crime">>
+<<declare $talkedTo = "no">>
 ===
 
 title: Outside
 ---
-<<set $border = "yes">>
-<<set $objective to "">>
-    Partner in Crime: Okay, so you know what we’re here for
-    You: Wha~?
-    Partner in Crime: *Sigh*
-    Partner in Crime: We are here to rob the vault
-    Partner in Crime: You’ll go in while I guide you through it, remember?
-    You: Yes yes…
-    You: But why do I have to go in alone? Can’t we just... both go? like normally?
-    Partner in Crime: Well, this vault is trickier than the past ones, so one of us will have to guide the other one through it
-    Partner in Crime: Besides, I’m the one that got us the map of the vault, so it’s only fair for you to go in
-    You: Sure…
-        -> How did you even get that map?
-            Partner in Crime: I got it from an acquaintance of mine
-            Partner in Crime: They gave this place a tip, said there would be a lot of money
-            Partner in Crime: Now hurry up, before the guards grow suspicious of us
-        -> Okay, let's do this!
-<<set $objective to "Enter the bank">>
+<<if $talkedTo == "no">>
+    <<set $border = "yes">>
+    <<set $objective to "">>
+    <<set_enabled_in_unity "PartnerSound" true>>
+        Partner in Crime: Okay, so you know what we’re here for
+        You: Wha~?
+        Partner in Crime: *Sigh*
+        Partner in Crime: We are here to rob the vault
+        Partner in Crime: You’ll go in while I guide you through it, remember?
+        You: Yes yes…
+        You: But why do I have to go in alone? Can’t we just... both go? like normally?
+        Partner in Crime: Well, this vault is trickier than the past ones, so one of us will have to guide the other one through it
+        Partner in Crime: Besides, I’m the one that got us the map of the vault, so it’s only fair for you to go in
+        You: Sure…
+            -> How did you even get that map?
+                Partner in Crime: I got it from an acquaintance of mine
+                Partner in Crime: They gave this place a tip, said there would be a lot of money
+                Partner in Crime: Now hurry up, before the guards grow suspicious of us
+            -> Okay, let's do this!
+    <<set $objective to "Enter the bank">>
+    <<set $talkedTo = "yes">>
+    <<set_enabled_in_unity "PartnerSound" false>>
+<<elseif $talkedTo == "yes">>
+    <<set_enabled_in_unity "PartnerSound" true>>
+    Partner in Crime: You should get going
+    <<set_enabled_in_unity "PartnerSound" false>>
+<<endif>>
 ===
 
 title: Border
@@ -47,6 +57,7 @@ title: Border
 title: Lobby
 ---
 <<set $objective to " ">>
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: Test, test… does the walkie talkie work?
     You: It sure does
     Partner in Crime: Good
@@ -57,6 +68,7 @@ title: Lobby
     You: …
     You: Strange
 <<set $objective to "Find the employees entrance">>
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 //________________
@@ -68,10 +80,12 @@ title: Room1
 <<set $objective to "Get to the other side">>
 <<play_animation "DoorSwing" "DoorOpenSwing" false>>
     You: Found the entrance
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: Good... good...
     Partner in Crime: Now be careful where you walk, there are traps everywhere
     Partner in Crime: There should be a way to know the right path...
     Partner in Crime: Make sure to look around for clues
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 //________________
@@ -81,34 +95,40 @@ title: Room1
 title: EnterRoom2
 ---
 <<if not has_item("Player", "key1")>>
-    You: This door is blocking the path to the vault
-    Partner in Crime: Hmmm…
-    Partner in Crime: There must be a way to open that door
+        You: This door is blocking the path to the vault
+    <<set_enabled_in_unity "WalkieTalkie Emitter" true>>
+        Partner in Crime: Hmmm…
+        Partner in Crime: There must be a way to open that door
 <<else>>
     <<play_animation "Door1 (Red)" "DoorOpen" "false">>
     <<set $objective to " ">>
     //<<take_item "Player" "key1">>
-    You: I’m in the next room… but it's just empty…
-    Partner in Crime: According to the map there is nothing wrong here
-    Partner in Crime: You can probably just go for it
+        You: I’m in the next room… but it's just empty…
+    <<set_enabled_in_unity "WalkieTalkie Emitter" true>>
+        Partner in Crime: According to the map there is nothing wrong here
+        Partner in Crime: You can probably just go for it
     <<set $objective to "Open the door">>
     <<declare $window = "0">>
 <<endif>>
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 title: Room2
 ---
 <<if not has_item("Player", "key2")>>
-    You: The door is locked
-    Partner in Crime: You didn’t go into the server room to grab the card??
-    You: … no
-    Partner in Crime: …
+        You: The door is locked
+    <<set_enabled_in_unity "WalkieTalkie Emitter" true>>
+        Partner in Crime: You didn’t go into the server room to grab the card??
+        You: … no
+        Partner in Crime: …
 <<else>>
     <<play_animation "Door2 (Green)" "DoorOpen" "false">>
     <<set $objective to " ">>
     //<<take_item "Player" "key2">>
-    Partner in Crime: You did it!
+    <<set_enabled_in_unity "WalkieTalkie Emitter" true>>
+        Partner in Crime: You did it!
 <<endif>>
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 title: Key2
@@ -119,13 +139,17 @@ title: Key2
     You: I got a keycard
     You: …
     You: I think I activated lasers
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: DON'T TOUCH THEM
     Partner in Crime: The alarm might go off when you do
     Partner in Crime: Just get out of there as fast as possible
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 title: Window
 ---
+<<set_enabled_in_unity "GlassBonk Emitter" true>>
+//<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
 <<if $window == "0">>
     Partner in Crime: Did you just try to jump through a window?
     <<set $window to "1">>
@@ -141,6 +165,8 @@ title: Window
 <<elseif $window == "4">>
     Partner in Crime: ...
 <<endif>>
+<<set_enabled_in_unity "GlassBonk Emitter" false>>
+//<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 //________________
@@ -150,10 +176,12 @@ title: Window
 title: Room3
 ---
 <<set $objective to "Open all the doors 0/3">>
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: Okay, in this room there should be 3 codes hidden
     Partner in Crime: You will need them to open all the doors
     Partner in Crime: ...
     Partner in Crime: They might be spread around though... I'm not sure
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 title: rightDoor3
@@ -165,7 +193,9 @@ title: rightDoor3
 ===
 title: wrongDoor3
 ---
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: That won't work
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 title: rightDoor4
@@ -177,7 +207,9 @@ title: rightDoor4
 ===
 title: wrongDoor4
 ---
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: I'd say try that again
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 title: rightDoor5
@@ -185,17 +217,21 @@ title: rightDoor5
     <<play_animation "Door5 (Yellow)" "DoorOpen" "false">>
     <<set_enabled_in_unity "ProximityTrigger$" false>>
     <<set $objective to " ">>
-    Partner in Crime: Lets go, the last room!
-    You: Yayy
-        -> There seems to be a lack of security
-            Partner in Crime: They just don’t expect geniuses like us to come and rob them
-            Partner in Crime: It just makes your job way easier
-        -> ...
+    <<set_enabled_in_unity "WalkieTalkie Emitter" true>>
+        Partner in Crime: Lets go, the last room!
+        You: Yayy
+            -> There seems to be a lack of security
+                Partner in Crime: They just don’t expect geniuses like us to come and rob them
+                Partner in Crime: It just makes your job way easier
+            -> ...
+    <<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 title: wrongDoor5
 ---
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: So close...
     Partner in Crime: It was only completely wrong
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 //________________
@@ -208,13 +244,14 @@ title: Room4
 <<play_animation "ClosingDoor" "ClosingDoorClose" "false">>
 <<play_animation "LoweringRoof" "LoweringRoof" "false">>
 <<set_enabled_in_unity "PuzzleStart" false>>
-    *click*
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: WHAT DID YOU DO??!?!
     You: What?
     Partner in Crime: GET OUT OF THERE FAST, THE ROOF IS COLLAPSING!!
     You: WHAT??!
     Partner in Crime: Don’t forget the card though
 <<set $objective to "ESCAPE">>
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 title: FakeKey
@@ -235,9 +272,10 @@ title: Room5
         <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
         <<set $objective to " ">>
         <<declare $code = "0">>
+        <<set_enabled_in_unity "WalkieTalkie Emitter" true>>
         //<<take_item "Player" "key6">>
-        Partner in Crime: You made it!
-        Partner in Crime: Now you just have to put the code into the keypad!
+            Partner in Crime: You made it!
+            Partner in Crime: Now you just have to put the code into the keypad!
         <<set $objective to "Enter the code">>
             -> You didn’t tell me there would be a code!?
                 Partner in Crime: Oh, right…
@@ -258,17 +296,20 @@ title: Room5
                             Partner in Crime: I’ll explain once you’re out of there
                             Partner in Crime: We don’t want the guards to come back and catch us, now do we?
             -> Oh, right, yes
+        <<set_enabled_in_unity "WalkieTalkie Emitter" false>>
     <<else>>
         <<play_animation "Door6 (Cyan)" "DoorOpen" "false">>
-        Partner in Crime: You made it!
-        Partner in Crime: Now you just have to put the code into the keypad!
+        <<set_enabled_in_unity "WalkieTalkie Emitter" true>>
+            Partner in Crime: You made it!
+            Partner in Crime: Now you just have to put the code into the keypad!
         <<set $objective to "Enter the code">>
-        You: I found something better...
-        You: It's called dynamite
-        Partner in Crime: Holy shit
-        Partner in Crime: That works, yeah...
-        Partner in Crime: Just blow up the vault and we can run away with the money I guess...
+            You: I found something better...
+            You: It's called dynamite
+            Partner in Crime: Holy shit
+            Partner in Crime: That works, yeah...
+            Partner in Crime: Just blow up the vault and we can run away with the money I guess...
         <<set $objective to "Explode the vaultdoor">>
+        <<set_enabled_in_unity "WalkieTalkie Emitter" false>>
     <<endif>>
 <<endif>>
 ===
@@ -279,6 +320,7 @@ title: rightCode
 <<set_enabled_in_unity "AlarmLight" true>>
 <<set_enabled_in_unity "ProximityTrigger%" false>>
     You: Uhhh… the vault didn't open and I’m locked in
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: haha
     Partner in Crime: ahahaaha
     Partner in Crime: ahahaAHAHAH
@@ -294,11 +336,13 @@ title: rightCode
     Partner in Crime: Now you go and have fun in jail while I’m going on a well earned vacation
     Partner in Crime: Bye bye
     Police: HANDS UP WHERE WE CAN SEE THEM, YOU’RE UNDER ARREST
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 <<load_scene "Ending1">>
 ===
 
 title: wrongCode
 ---
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
 <<if $code == "0">>
     Partner in Crime: Hmmm.... That's not right... Take a look at the cards again
     <<set $code to "1">>
@@ -329,6 +373,7 @@ title: wrongCode
             Partner in Crime: I’ll explain once you’re out of there
             Partner in Crime: We don’t want the guards to come back and catch us, now do we?
 <<endif>>
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 //________________
@@ -348,8 +393,10 @@ title: SecDoorClose
 <<play_animation "SecretDoor" "DoorClose" "false">>
 <<set_enabled_in_unity "ProximityTrigger!" false>>
 <<set $objective to "???">>
+<<set_enabled_in_unity "WalkieTalkie Emitter" true>>
     Partner in Crime: Wait, where are you going?!
     Partner in Crime: This isn't on the map...
+<<set_enabled_in_unity "WalkieTalkie Emitter" false>>
 ===
 
 title: SecDoorOpen
@@ -367,8 +414,8 @@ title: PlaceBomb
 
 title: Explosion
 ---
-    //<<set_enabled_in_unity "DynamiteDoor" false>>
-    <<set_enabled_in_unity "Explosion02" true>>
-    <<set_enabled_in_unity "DynamiteBoom Emitter" true>>
-    boom
+//<<set_enabled_in_unity "DynamiteDoor" false>>
+<<set_enabled_in_unity "Explosion02" true>>
+<<set_enabled_in_unity "DynamiteBoom Emitter" true>>
+Boom
 ===
